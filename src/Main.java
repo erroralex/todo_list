@@ -14,7 +14,8 @@ public class Main {
         System.out.println("[2] Remove item from To-Do");
         System.out.println("[3] Show To-Do list");
         System.out.println("[4] Sort To-Do list alphabetically");
-        System.out.println("[5] Exit program");
+        System.out.println("[5] Edit list");
+        System.out.println("[6] Exit program");
     }
 
     public static void whatToDo() {
@@ -38,7 +39,7 @@ public class Main {
 
                 for (int i = 0; i < currentList.size(); i++)
                      {
-                         System.out.println(i + 1 + " - " + currentList.get(i));
+                         System.out.println("[" + (i + 1) + "] - " + currentList.get(i));
                      }
 
                 System.out.println("--------------");
@@ -55,10 +56,13 @@ public class Main {
 
             case 3://Show To-Do list items
                 System.out.println("Your list currently holds:\n");
-                System.out.println(currentList);
+                for (int i = 0; i < currentList.size(); i++)
+                {
+                    System.out.println("[" + (i + 1) + "] - " + currentList.get(i));
+                }
                 break;
 
-            case 4:
+            case 4://Sort list alphabetically
 
                 currentList.sort((o1, o2) -> o1.compareToIgnoreCase(o2));
 
@@ -68,7 +72,33 @@ public class Main {
                 }
                 break;
 
-            case 5:
+            case 5://Edit list
+
+                System.out.println("Edit Item:");
+
+                for (int i = 0; i < currentList.size(); i++)
+                {
+                    System.out.println("[" + (i + 1) + "] - " + currentList.get(i));
+                }
+
+                System.out.println("--------------");
+                System.out.println("Please enter the number of the item to edit: ");
+                int edit = scanner.nextInt();
+
+                if ((edit-1)<0 || edit>currentList.size()) {
+                    System.out.println("Invalid input, please use a correct value!");
+                }
+                else {
+                // Get new value from user
+                System.out.println("Please enter the new value for item " + edit);
+                String newValue = scanner.next();
+
+                currentList.set(edit - 1, newValue);
+                System.out.println("Item updated successfully!");
+                }
+                break;
+
+            case 6://Exit program
                 isRunning = false;
                 System.out.println("Thank you for using this program!");
                 break;
