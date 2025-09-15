@@ -15,9 +15,7 @@ public class Main {
         System.out.println("[2] Remove item from To-Do");
         System.out.println("[3] Show To-Do list");
         System.out.println("[4] Sort To-Do list alphabetically");
-        System.out.println("[5]");
-        System.out.println("[6]");
-        System.out.println("[7] Exit program");
+        System.out.println("[5] Exit program");
     }
 
     public static void whatToDo() {
@@ -59,7 +57,6 @@ public class Main {
             case 3://Show To-Do list items
                 System.out.println("Your list currently holds:\n");
                 System.out.println(currentList);
-                scan.nextLine();
                 break;
 
             case 4:
@@ -73,14 +70,6 @@ public class Main {
                 break;
 
             case 5:
-
-                break;
-
-            case 6:
-
-                break;
-
-            case 7:
                 isRunning = false;
                 System.out.println("Thank you for using this program!");
                 break;
