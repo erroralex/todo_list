@@ -3,7 +3,6 @@ import java.util.*;
 public class Main {
 
     static boolean isRunning = true;
-    static Scanner scan = new Scanner(System.in);
     static int menuChoice;
     private static List<String> currentList = new ArrayList<String>();
 
